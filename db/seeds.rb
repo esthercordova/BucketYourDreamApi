@@ -6,4 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-items = Item.create([{ title : 'Example bucket list title'}, { description : ' We need to go rock climbing on the moon'}, { status : 'true'}])
+
+Item.create([
+  { title: 'Be a cool person', description: 'Trying to be cool for a day', status: true },
+  {title: 'Awesome dance party', description: 'Dance naked in the sun', status: false },
+  {title: 'Funny faces', description: 'Make funny faces at your mom', status: true },
+  ])
