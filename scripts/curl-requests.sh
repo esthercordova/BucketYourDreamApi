@@ -21,5 +21,5 @@ curl --include --request DELETE http://localhost:3000/items/6 \
       }
     }'
 
-    curl --include --request GET http://localhost:3000/items/5 \
+    curl --include --request GET http://localhost:3000/items \
       --header "Authorization: Token token=BAhJIiVmMDZlY2MyNmUxZDAyZmU2MWRmM2NhMDBmODk2ZTQxYgY6BkVG--2a3245ec21b785516419018856acce5396bf6380"
