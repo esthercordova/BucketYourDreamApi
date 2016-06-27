@@ -3,6 +3,14 @@ class ItemsController < ApplicationController
 
   # GET /items
   # GET /items.json
+
+  def indexGetItems
+    # all_items = Item.all
+    #
+    # for () params[:id].to_i
+
+  end
+
   def index
     @items = Item.all
 
@@ -54,6 +62,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:title, :description, :status)
+      params.require(:item).permit(:title, :description, :status, :user_id)
     end
 end

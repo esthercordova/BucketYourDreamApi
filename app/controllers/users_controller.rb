@@ -2,6 +2,20 @@
 class UsersController < ProtectedController
   skip_before_action :authenticate, only: [:signup, :signin]
 
+  # def createItem
+  #   item =  current_user.items.create(itemInformation)
+  #   if user.valid?
+  #     render json: user, status: :created
+  #   else
+  #     head :bad_request
+  #   end
+  # end
+
+  # def itemInformation
+  #   params.require(:items)
+  #     .permit(:title,:description,:status,:user_id)
+  # end
+
   # POST '/sign-up'
   def signup
     user = User.create(user_creds)
