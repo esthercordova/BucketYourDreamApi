@@ -4,7 +4,8 @@ curl --include --request POST http://localhost:3000/items \
 --data '{
     "item": {
         "title": "Curl title",
-        "description": "Curl description"
+        "description": "Curl description",
+        "status": "dream"
     }
 }'
 
