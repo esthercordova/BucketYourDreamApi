@@ -8,7 +8,7 @@
 
 
 Item.create([
-  { title: 'Be a cool person', description: 'Trying to be cool for a day', status: "dream"},
-  {title: 'Awesome dance party', description: 'Dance naked in the sun', status: "dream" },
-  {title: 'Funny faces', description: 'Make funny faces at your mom', status: "dream" },
+  { title: 'Be a cool person', description: 'Trying to be cool for a day', status: "dream", user_id: 1},
+  {title: 'Awesome dance party', description: 'Dance naked in the sun', status: "dream", user_id: 1 },
+  {title: 'Funny faces', description: 'Make funny faces at your mom', status: "dream" , user_id: 4},
   ])
