@@ -57,6 +57,16 @@ class UsersController < ProtectedController
     head :bad_request
   end
 
+  # def createItem
+  #   @item = current_user.items.new(item_params)
+  #
+  #   if @item.save
+  #     render json: @item, status: :created, location: @item
+  #   else
+  #     render json: @item.errors, status: :unprocessable_entity
+  #   end
+  # end
+
   private
 
   def user_creds

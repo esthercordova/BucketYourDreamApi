@@ -1,3 +1,4 @@
+#
 class ItemsController < ProtectedController
   before_action :set_item, only: [:show, :update, :destroy]
 
@@ -26,12 +27,15 @@ class ItemsController < ProtectedController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    if current_user.id.to_s == item_params[:user_id].to_s
+      p 'the equality is true'
+      @item = Item.new(item_params)
 
-    if @item.save
-      render json: @item, status: :created, location: @item
-    else
-      render json: @item.errors, status: :unprocessable_entity
+      if @item.save
+        render json: @item, status: :created, location: @item
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
     end
   end
 
@@ -50,9 +54,11 @@ class ItemsController < ProtectedController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    @item.destroy
+    # if current_user.id.to_s == item_params[:user_id].to_s
+      @item.destroy
 
-    head :no_content
+      head :no_content
+    # end
   end
 
   private
