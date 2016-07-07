@@ -4,5 +4,10 @@ curl --include --request DELETE http://localhost:3000/sign-out/$ID \
   --header "Authorization: Token token=$TOKEN"
 
 
-curl --include --request DELETE http://localhost:3000/items/1 \
---header "Authorization: Token token=BAhJIiUyNzRiZjEwMTgzMTUzYThkNDM4Y2Y2N2E1MzY0MmZjMwY6BkVG--1327a714115dfa5829a50c979277d5ddf59732c7"
+curl --include --request DELETE http://localhost:3000/items/11 \
+--header "Authorization: Token token=BAhJIiU5N2VmNDYzMDMwNjdiZDJhNWJiMWZkMWYxZTc0N2Y1MAY6BkVG--f517cfab804e1841ead315cad48686a03de4f752" \
+--data '{
+    "item": {
+        "user_id": "4"
+    }
+}'
