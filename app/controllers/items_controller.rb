@@ -13,15 +13,19 @@ class ItemsController < ProtectedController
   end
 
   def index
-    @items = Item.all
+    if current_user.id.to_s == item_params[:user_id].to_s
+      @items = Item.all
 
-    render json: @items
+      render json: @items
+    end
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
-    render json: @item
+    if current_user.id.to_s == item_params[:user_id].to_s
+      render json: @item
+    end
   end
 
   # POST /items
@@ -42,23 +46,25 @@ class ItemsController < ProtectedController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    @item = Item.find(params[:id])
+    if current_user.id.to_s == item_params[:user_id].to_s
+      @item = Item.find(params[:id])
 
-    if @item.update(item_params)
-      head :no_content
-    else
-      render json: @item.errors, status: :unprocessable_entity
+      if @item.update(item_params)
+        head :no_content
+      else
+        render json: @item.errors, status: :unprocessable_entity
+      end
     end
   end
 
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    # if current_user.id.to_s == item_params[:user_id].to_s
+    if current_user.id.to_s == item_params[:user_id].to_s
       @item.destroy
 
       head :no_content
-    # end
+    end
   end
 
   private
